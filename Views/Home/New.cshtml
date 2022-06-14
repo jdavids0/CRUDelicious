@@ -1,0 +1,57 @@
+@{
+    ViewData["Title"] = "Add New Dish";
+}
+@model Dish
+
+<div class="container text-center mt-5">
+    <h3>Add a new Dish!</h3>
+    <div class="d-flex justify-content-start mb-2">
+        <a href="/" class="btn btn-info btn-outline-dark">Home</a>
+    </div>
+    <div>
+        <form action="/dish/update/" method="post" class="d-flex justify-content-between">
+            <div>
+                <div class="form-group">
+                    <label for="ChefName">Chef's Name:</label><br>
+                    <input asp-for="ChefName"><br>
+                    <span asp-validation-for="ChefName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="DishName">Dish Name:</label><br>
+                    <input asp-for="DishName"><br>
+                    <span asp-validation-for="DishName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="Calories"># of Calories:</label><br>
+                    <input asp-for="Calories" min="0"><br>
+                    <span asp-validation-for="Calories" class="text-danger"></span>
+                </div>
+            </div>
+            <div>
+                <div class="form-group">
+                    <label for="Tastiness">Tastiness:</label><br>
+                    <select asp-for="Tastiness">
+                        <option value="" selected disabled hidden>Please Select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <span asp-validation-for="Tastiness" class="text-danger"></span>
+                </div>
+            </div>
+            <div>
+                <div class="form-group">
+                    <label for="Description">Description:</label><br>
+                    <textarea asp-for="Description "cols="30" rows="5"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div>
+                    <input type="submit" value="Add Dish" class="btn btn-dark text-white">
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

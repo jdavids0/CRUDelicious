@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "Show One Dish";
+}
+@model Dish
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-start mb-2">
+        <a href="/" class="btn btn-info btn-outline-dark">Home</a>
+    </div>
+    <div>
+        <div class="text-center">
+            <h2>
+                @Model.DishName
+            </h2>
+            <h5>
+                @Model.ChefName
+            </h5>
+            <hr class="bg-dark">
+        </div>
+        <div>
+            <p>
+                @Model.Description
+            </p>
+            <p>
+                Calories: @Model.Calories
+            </p>
+            <p>
+                Tastiness: @Model.Tastiness
+            </p>
+        </div>
+        <div class="d-flex justify-content-between">
+            <a href="/dish/delete/@Model.DishId" class="btn btn-dark">Delete</a>
+            <a href="/dish/edit/@Model.DishId" class="btn btn-dark">Edit</a>
+
+        </div>
+    </div>
+
+</div>
