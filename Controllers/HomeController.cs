@@ -65,6 +65,7 @@ public class HomeController : Controller
         oldDish.Calories = newVersionOfDish.Calories;
         oldDish.Tastiness = newVersionOfDish.Tastiness;
         oldDish.Description = newVersionOfDish.Description;
+        oldDish.UpdatedAt = DateTime.Now;
         _context.SaveChanges();
         return RedirectToAction("Index");
         }
@@ -73,7 +74,7 @@ public class HomeController : Controller
         }
 
     }
-
+    
     // *** delete route ***
     [HttpGet("dish/delete/{DishId}")]
     public IActionResult DeleteDish(int DishId)
